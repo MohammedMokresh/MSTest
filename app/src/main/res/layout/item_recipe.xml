@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.example.marleyspoontest.models.ParsedItem" />
+
+        <variable
+            name="clickListener"
+            type="com.example.marleyspoontest.base.OnClickListener" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_margin="8dp"
+        android:onClick="@{()->clickListener.onItemClick(item)}">
+
+
+        <ImageView
+            android:id="@+id/recipe_ImageView"
+            imageUrl="@{item.image}"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recipe_title_TextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:text="@{item.title}"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recipe_ImageView"
+            tools:text="Crispy chicken" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

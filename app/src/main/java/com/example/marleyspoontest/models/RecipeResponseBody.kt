@@ -8,12 +8,4 @@ data class RecipeResponseBody(
     var includes: Includes?,
     @SerializedName("items")
     var items: List<Item>?,
-    @SerializedName("limit")
-    var limit: Int?,
-    @SerializedName("skip")
-    var skip: Int?,
-    @SerializedName("sys")
-    var sys: Sys?,
-    @SerializedName("total")
-    var total: Int?
 )

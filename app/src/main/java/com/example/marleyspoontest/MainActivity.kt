@@ -1,11 +1,9 @@
 package com.example.marleyspoontest
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.example.marleyspoontest.base.BaseActivity
+import com.example.marleyspoontest.databinding.ActivityMainBinding
+import com.example.marleyspoontest.recipe.RecipeViewModel
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
-}
+
+class MainActivity : BaseActivity<ActivityMainBinding,
+        RecipeViewModel>(R.layout.activity_main, RecipeViewModel::class)

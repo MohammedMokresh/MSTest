@@ -96,9 +96,6 @@ abstract class BaseFragment<B : ViewDataBinding, VM : BaseViewModel>(
     private fun registerEvent() {
         EventPipe.registerEvent(UIEvent::class.java) { event ->
             when (event) {
-                is UIEvent.OnBackPressed -> {
-                    onBackButtonPressed()
-                }
                 else -> {
                     onUIEventTriggered(event)
                 }
